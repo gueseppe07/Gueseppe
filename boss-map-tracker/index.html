@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boss Kill Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Event Tracking</p>
+          <h1>Boss Kill Tracker</h1>
+        </div>
+        <div class="controls">
+          <label class="label-block" for="bossName">Boss name</label>
+          <input id="bossName" type="text" maxlength="30" placeholder="e.g. Frost Dragon" />
+          <button id="addMarkerBtn" class="primary">Mark kill</button>
+          <button id="clearSelectedBtn" class="secondary">Clear selected</button>
+          <button id="clearAllBtn" class="danger">Clear all</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="map-panel">
+          <div class="toolbar-row">
+            <label class="upload-label" for="mapUpload">Map image</label>
+            <input id="mapUpload" type="file" accept="image/*" />
+          </div>
+
+          <div id="map" class="map" aria-label="Boss tracking map" role="img">
+            <div class="map-grid"></div>
+          </div>
+          <p class="hint">Click anywhere on the map to place a boss kill marker. Click a marker to select it.</p>
+        </section>
+
+        <aside class="sidebar">
+          <h2>Tracked kills</h2>
+          <ul id="eventList" class="event-list" aria-live="polite"></ul>
+        </aside>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
